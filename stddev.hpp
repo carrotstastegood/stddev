@@ -30,7 +30,6 @@ namespace stats {
         float y = 0;
         float mean;
         float variance;
-        vector<float> deviants;
 
         for (int i = 0; i < v.size(); i++) {
             samplesize += v[i];
@@ -45,12 +44,13 @@ namespace stats {
             x = x * x;
             y += x;
         }
-        
+
+        /* Optional, may be usefull for debugging.
         std::cout << "Sample Size: " << samplesize << "\n";
         std::cout << "Mean: " << mean << "\n";
-
+        */
+        
         variance = (y / v.size());
         return sqrt(variance); 
     }
-
 }
